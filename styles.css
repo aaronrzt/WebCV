@@ -99,7 +99,7 @@ body {
 #output {
     white-space: pre-wrap;
     overflow-y: auto;
-    max-height: 45vh;
+    max-height: 95%;
     box-sizing: border-box;
 }
 
