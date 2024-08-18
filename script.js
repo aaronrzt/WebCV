@@ -151,6 +151,7 @@ These commands are defined internally.  Type 'help' to see this list.
 
 clear
 education
+help
 leadership
 merits
 projects
