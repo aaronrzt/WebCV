@@ -182,7 +182,7 @@ Development of two robots to compete in the Spin Up VEX Challenge.
                     } else if (command.toLowerCase() === 'merits'){
                         output.innerHTML += `<div>
 2023 – 1st place in Expo Ingenierías with IIoT project
-2022 – Judges Champions in National VEX Robotics Competition
+2023 – Judges Champions in National VEX Robotics Competition
 2022 – Participation in Expo Ingenierías with a vehicle with autonomous navigation
                         </div>`;
                     } else if (command.toLowerCase() === 'projects') {
