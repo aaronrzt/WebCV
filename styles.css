@@ -103,9 +103,10 @@ body {
     box-sizing: border-box;
 }
 
-.padded-list li {
-    list-style-type: none;
-    padding-left: 30px;
+.padded-list {
+    padding-top: -20px;
+    white-space: pre-wrap; /* Preserve spaces and allow line breaks */
+    padding-left: 40px; /* Indent the entire paragraph */
 }
 
 #input {
