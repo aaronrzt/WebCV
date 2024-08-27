@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () =>
     
         function displayPrompt(promptText = normalPrompt) {
             promptElement.textContent = promptText;
+            promptElement.style.color = '#46AF1D';
             input.focus();
             output.scrollTop = output.scrollHeight;
         }
@@ -144,7 +145,8 @@ Type [0...3] to select a project and read its details or type 9 to cancel.
                         output.innerHTML += `<div>Invalid selection. Type [0...3] to select a project or 9 to cancel.</div>`;
                     }
                 } else {
-                    output.innerHTML += `<div>${normalPrompt}${command}</div>`;
+                    //Change to #6A9752
+                    output.innerHTML += `<span style="color: #46AF1D;">${normalPrompt}</span><span style="color: #FFF;">${command}</span>`;
                     if (command === '') {
                         output.innerHTML += '';
                     } else if (command.toLowerCase() === 'clear') {
@@ -156,6 +158,7 @@ Aarón Gonzalo Ramírez Tafolla | CV as of August 2024
 These commands are defined internally.  Type 'help' to see this list.
 
 clear
+disclaimer
 education
 help
 contact
@@ -164,6 +167,14 @@ merits
 projects
 skills
 work
+                        </div>`;
+                    } else if (command.toLowerCase() === 'disclaimer'){
+                        output.innerHTML += `<div>
+                        
+Background image: Mirror by Uday Nakade
+
+Project under GNU GENERAL PUBLIC LICENSE Version 3
+                        
                         </div>`;
                     } else if (command.toLowerCase() === 'education'){
                         output.innerHTML += `<div>
