@@ -1,51 +1,35 @@
 document.addEventListener('DOMContentLoaded', () =>
     {
     
-        //                                                                              TODO
-        // Drag the terminal
-        /*
-        const terminal = document.getElementById('terminal-container');
+        
+        // Arrastre de la ventana
+        const terminalContainer = document.getElementById('terminal-container');
         const titleBar = document.getElementById('title-bar');
-    
         let isDragging = false;
-        let startX, startY, startLeft, startTop;
-    
         let offsetX, offsetY;
-    
+
         titleBar.addEventListener('mousedown', (e) => {
             isDragging = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            const rect = terminal.getBoundingClientRect();
-            startLeft = rect.left;
-            startTop = rect.top;
-            offsetX = startX - startLeft; // Calcula el offset en X
-            offsetY = startY - startTop;   // Calcula el offset en Y
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', onMouseUp);
+            offsetX = e.clientX - terminalContainer.offsetLeft;
+            offsetY = e.clientY - terminalContainer.offsetTop;
+            terminalContainer.style.position = 'absolute';
         });
-    
-        function onMouseMove(e) {
+
+        document.addEventListener('mousemove', (e) => {
             if (isDragging) {
-                const deltaX = e.clientX - startX;
-                const deltaY = e.clientY - startY;
-                terminal.style.left = `${startLeft + deltaX}px`;
-                terminal.style.top = `${startTop + deltaY}px`;
+                terminalContainer.style.left = `${e.clientX - offsetX}px`;
+                terminalContainer.style.top = `${e.clientY - offsetY}px`;
             }
-        }
-    
-        function onMouseUp() {
+        });
+
+        document.addEventListener('mouseup', () => {
             isDragging = false;
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-        }
-    
-        */
+        });
+
         // Input/Output management
         const output = document.getElementById('output');
         const input = document.getElementById('input');
         const promptElement = document.getElementById('prompt');
-        const titleBar = document.getElementById('title-bar');
     
         const normalPrompt = 'user@cv-aaronrzt:~$ ';
         const selectionPrompt = 'Select a project [0...3], 8 to see the list or 9 to cancel: ';
